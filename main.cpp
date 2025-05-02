@@ -7,11 +7,11 @@ void callBack(const std::string &responsePiece){
 
 int main(int argc, char** argv) {
 
-    std::string model_path = "H:\\workspace\\llama.cpp\\build\\bin\\Debug\\dolphin3b.gguf";
+    std::string model_path = "path/to/model.gguf";
     int ngl = 99, n_ctx = 2048;
 
     LlamaExecutor executor;
-    executor.setOptions(model_path, ngl, n_ctx);
+    executor.setOptions(model_path, ngl, n_ctx); // if you want to calculate embedding, set embedding as true of this function
     executor.setCallBackFunction(callBack);
     executor.chat("hello how are you?");
 
